@@ -43,8 +43,8 @@ public class Temperature {
             System.out.printf("Prosijek: %.2f %n", sum/count);
             System.out.printf("Broj povišenih temperatura (> %.2f°C): %d%n", Poviseno, povisenoCount);
         }
-        if( povisenoCount == 0){
-            System.out.println("Sva mjernjea u granicama normale");
+        if(count>0 && povisenoCount == 0){
+            System.out.println("Sva mjerenja u granicama normale");
         }
         else {
             System.out.println("Povišena temperatura zabilježena");
