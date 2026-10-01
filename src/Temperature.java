@@ -20,19 +20,15 @@ public class Temperature {
             if (temperature == 0.0) {
                 break;
             }
-
             if (count == 0 || temperature < minTemperature) {
                 minTemperature = temperature;
             }
-
             if (temperature > maxTemperature) {
                 maxTemperature = temperature;
             }
-
             if (temperature > Poviseno) {
                 povisenoCount++;
             }
-
             count++;
         }
 
@@ -43,6 +39,7 @@ public class Temperature {
             System.out.printf("Najviša temperatura: %.2f°C%n", maxTemperature);
             System.out.printf("Broj povišenih temperatura (> %.2f°C): %d%n", Poviseno, povisenoCount);
         }
+        if(poviseniCount > 0){}
 
         input.close();
     }
