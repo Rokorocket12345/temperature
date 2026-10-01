@@ -10,6 +10,7 @@ public class Temperature {
 
         double minTemperature = 0;
         double maxTemperature = 0;
+        double sum = 0;
         int count = 0;
         int povisenoCount = 0;
         final double Poviseno = 37.0;
@@ -30,17 +31,24 @@ public class Temperature {
                 povisenoCount++;
             }
             count++;
+            sum += temperature;
         }
 
         if (count == 0) {
             System.out.println("Nije uneseno nijedno mjerenje.");
         } else {
+            System.out.printf("%n Broj mjerenja: %d %n", count);
             System.out.printf("Najniža temperatura: %.2f°C%n", minTemperature);
             System.out.printf("Najviša temperatura: %.2f°C%n", maxTemperature);
+            System.out.printf("Prosijek: %.2f %n", sum/count);
             System.out.printf("Broj povišenih temperatura (> %.2f°C): %d%n", Poviseno, povisenoCount);
         }
-        if(poviseniCount > 0){}
-
+        if( povisenoCount == 0){
+            System.out.println("Sva mjernjea u granicama normale");
+        }
+        else {
+            System.out.println("Povišena temperatura zabilježena");
+        }
         input.close();
     }
 }
